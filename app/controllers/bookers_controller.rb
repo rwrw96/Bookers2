@@ -8,18 +8,13 @@ class BookersController < ApplicationController
   end
 
   def new
-    @bookers = Booker.new
-    @bookres = Booker.all
+    @booker = Booker.new
   end
   
   def create
-    @bookers = Booker.new(bookers_params)
-    @bookers.save
-    if @bookers.save
-      redirect_to "/bookers/new" , notice: "succese"
-    else
-      flash[:alert] = 'Save error!'
-    end
+    bookers = Booker.new(bookers_params)
+    bookers.save
+    redirect_to bookers_path
   end
 
   def edit
