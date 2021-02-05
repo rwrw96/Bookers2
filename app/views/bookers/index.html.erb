@@ -1,7 +1,8 @@
 <h1>Books</h1>
-<p>title　　body</p>
-<%= @bookers.each do |book| %>
-<span><%= book.title %></span>
+<p>title</P>       <P>body</p>
+<% @bookers.each do |book| %>
+<span><%= link_to "book.title" , booker_path(params[:id]) %></span>
+<span><%= book.body %></span>
 <% end %>
 
 <h1>New Book</h1>

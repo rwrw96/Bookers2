@@ -14,7 +14,7 @@ class BookersController < ApplicationController
   def create
     bookers = Booker.new(bookers_params)
     bookers.save
-    redirect_to bookers_path
+    redirect_to booker_path(bookers.id)
   end
 
   def edit
